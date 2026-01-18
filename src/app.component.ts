@@ -4,7 +4,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { FormspreeService } from './formspree.service';
+import { FormService } from './contactusform.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import { FormspreeService } from './formspree.service';
 })
 export class AppComponent {
   private fb = inject(FormBuilder);
-  private formspreeService = inject(FormspreeService);
+  private formService = inject(FormService);
 
   submitting = signal(false);
   submissionStatus = signal<'initial' | 'success' | 'error'>('initial');
@@ -35,7 +35,7 @@ export class AppComponent {
 
     this.submitting.set(true);
 
-    this.formspreeService.sendContactForm(this.contactForm.value)
+    this.formService.sendContactForm(this.contactForm.value)
       .pipe(
         tap(() => {
           this.submissionStatus.set('success');

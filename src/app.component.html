@@ -4,23 +4,20 @@
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <svg class="h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639l7.5-10.5a.5.5 0 01.832.664l-6.5 9.128 6.5 9.128a.5.5 0 01-.832.664l-7.5-10.5z" />
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.964 12.322a1.012 1.012 0 010-.639l7.5-10.5a.5.5 0 01.832.664l-6.5 9.128 6.5 9.128a.5.5 0 01-.832.664l-7.5-10.5z" />
-        </svg>
-                <h1 class="text-2xl font-bold text-gray-800">Vision Corp</h1>
+                <img src="assets/logo_1.jpg" alt="Apprevio Technology Logo" class="h-10 object-contain">
+                <!-- <h1 class="text-2xl font-bold text-gray-800">Apprevio Technology</h1> -->
             </div>
-            <nav>
+            <!-- <nav>
                 <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">Contact Us</a>
-            </nav>
+            </nav> -->
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+    <main class="flex-grow flex items-center justify-center p-4">
         <div class="w-full max-w-2xl mx-auto">
             <div class="bg-white rounded-xl shadow-2xl overflow-hidden fade-in">
-                <div class="px-6 py-8 md:p-12">
+                <div class="px-4 md:p-8">
 
                     @if (submissionStatus() === 'success') {
                     <div class="text-center fade-in">
@@ -43,11 +40,11 @@
                         <p class="text-center text-gray-500 mb-8">We'd love to hear from you. Please fill out this form.</p>
 
                         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
                                 <!-- Name -->
                                 <div class="space-y-2">
                                     <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                    <input type="text" id="name" formControlName="name" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="John Doe">                                    @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+                                    <input type="text" id="name" formControlName="name" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="Harsh Yadav">                                    @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
                                     <p class="text-sm text-red-600">Full name is required.</p>
                                     }
                                 </div>
@@ -66,7 +63,7 @@
                             <!-- Phone (Optional) -->
                             <div class="mt-6 space-y-2">
                                 <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number <span class="text-gray-400">(Optional)</span></label>
-                                <input type="tel" id="phone" formControlName="phone" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="+1 (555) 123-4567">
+                                <input type="tel" id="phone" formControlName="phone" class="block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="+xx xxxxx xxxxx">
                             </div>
 
                             <!-- Message -->
@@ -78,9 +75,9 @@
                             </div>
 
                             <!-- Submission Status -->
-                            <div class="mt-6 min-h-[4rem]">
+                            <div class="mt-4 min-h-[2rem]">
                                 @if (submissionStatus() === 'error') {
-                                <div class="rounded-md bg-red-50 p-4 fade-in">
+                                <div class="rounded-md bg-red-50 p-2 fade-in">
                                     <div class="flex">
                                         <div class="flex-shrink-0">
                                             <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -120,35 +117,40 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-300">
         <div class="container mx-auto px-6 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Vision -->
                 <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Our Vision</h3>
-                    <p class="text-gray-400">To innovate and lead in creating technology that connects people and simplifies complexity, building a future where technology empowers everyone.</p>
+                    <h3 class="font-semibold text-white mb-4">Our Vision</h3>
+                    <p class="text-sm text-gray-400">We recognized on the earth to strive the High Quality Product and genuine service for every business to reach at top.</p>
                 </div>
                 <!-- Address -->
                 <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Our Office</h3>
-                    <p class="text-gray-400">123 Innovation Drive<br>Tech City, TX 75001<br>United States</p>
+                    <h3 class="font-semibold text-white mb-4">Our Office</h3>
+                    <p class="text-sm text-gray-400">Apprevio Technology office 103,<br>Arvi Road Gandi Nagar Wardha,<br> Maharashtra 442001. <br> Landmark:- Opposite First Cry.</p>
+                </div>
+                <!-- BranchAddress -->
+                <div>
+                    <h3 class="font-semibold text-white mb-4">Branch Office</h3>
+                    <p class="text-sm text-gray-400">Saraf Court, M-1, <br>Opposite Yashwant Stadium, Dhantoli, <br> Nagpur, Maharashtra 440012</p>
                 </div>
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
-                    <ul class="space-y-2 text-gray-400">
+                    <h3 class="font-semibold text-white mb-4">Contact Us</h3>
+                    <ul class="text-sm space-y-2 text-gray-400">
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                            <span>contact@visioncorp.dev</span>
+                            <span>info@apprevio.in</span>
                         </li>
                         <li class="flex items-center">
                             <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
-                            <span>+1 (555) 234-5678</span>
+                            <span>+91-9970 347 900</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
-                <p>&copy; 2024 Vision Corp. All Rights Reserved.</p>
+                <p>&copy; 2024 Apprevio Technology. All Rights Reserved </p>
             </div>
         </div>
     </footer>
