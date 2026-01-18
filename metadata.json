@@ -1,0 +1,5 @@
+{
+  "name": "Vision Corp Contact Form",
+  "description": "A modern, responsive contact form application built with Angular and Tailwind CSS, allowing users to send messages via Formspree.",
+  "requestFramePermissions": []
+}
