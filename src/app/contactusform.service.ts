@@ -14,9 +14,11 @@ export interface ContactFormData {
   providedIn: 'root'
 })
 export class FormService {
-  private http = inject(HttpClient);
-  // IMPORTANT: Replace with your own Formspree endpoint
-  private formspreeEndpoint = 'https://formspree.io/f/xjgggaol'; // my endpoint have to map apprevio-endpoint
+  private http = inject(HttpClient); 
+  
+  // formspreeEndpoint 'https://formspree.io/f/xeeekgqk'
+
+  private formspreeEndpoint = 'https://formspree.io/f/xeeekgqk';  
 
   sendContactForm(data: ContactFormData): Observable<any> {
     return this.http.post(this.formspreeEndpoint, data, { headers: { 'Accept': 'application/json' } });
