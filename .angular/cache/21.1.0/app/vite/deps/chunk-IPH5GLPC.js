@@ -1,6 +1,6 @@
 import {
   PlatformLocation
-} from "./chunk-I25EO7UH.js";
+} from "./chunk-RAA4KBZP.js";
 import {
   ApplicationRef,
   Attribute,
@@ -58,12 +58,12 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-C3KIP7I2.js";
+} from "./chunk-YCR3CWZC.js";
 import {
   Subject,
   __spreadProps,
   __spreadValues
-} from "./chunk-U7EDC2PH.js";
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/@angular/common/fesm2022/_location-chunk.mjs
 function joinWithSlash(start, end) {
@@ -4344,7 +4344,15 @@ function booleanOrUrlAttribute(value) {
 }
 
 export {
+  LocationStrategy,
+  PathLocationStrategy,
+  Location,
+  HashLocationStrategy,
   CommonModule,
-  PLATFORM_BROWSER_ID
+  PRECOMMIT_HANDLER_SUPPORTED,
+  PlatformNavigation,
+  NavigationAdapterForLocation,
+  PLATFORM_BROWSER_ID,
+  ViewportScroller
 };
-//# sourceMappingURL=chunk-WZUBZO3O.js.map
+//# sourceMappingURL=chunk-IPH5GLPC.js.map
