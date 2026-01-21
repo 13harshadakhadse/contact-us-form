@@ -74,6 +74,11 @@
                                 }
                             </div>
 
+                            <div class="my-4 w-full text-left">
+                                <p class="text-sm text-gray-600">By clicking Submit, you agree to our Terms of Service and that you have read our Privacy Policy.</p>
+                                <p class="mt-3 text-sm text-gray-600">By submitting this form, you agree to receive promotional updates regarding our services and offers through RCS, WhatsApp, and Email.</p>
+                            </div>
+
                             <!-- Submission Status -->
                             <div class="mt-4 min-h-[2rem]">
                                 @if (submissionStatus() === 'error') {
@@ -102,7 +107,7 @@
                       </svg>
                       <span>Sending...</span>
                     } @else {
-                      <span>Send Message</span>
+                      <span>Submit</span>
                     }
                   </button>
                             </div>
