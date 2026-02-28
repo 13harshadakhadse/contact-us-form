@@ -1,0 +1,90 @@
+<section class="relative overflow-hidden bg-slate-50 pt-20 pb-32 px-8">
+    <div class="container-custom relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div #heroText>
+                <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+              Marketing Excellence Since 2017
+            </span>
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-900 leading-[1.1] mb-8">
+                    Reach Your Audience <span class="text-indigo-600">Instantly</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Effortless, effective, and engaging messaging solutions for your business. Transform your digital presence today.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a routerLink="/contact" class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 flex items-center gap-2">
+                Get Started Today <mat-icon>arrow_forward</mat-icon>
+              </a>
+                    <a routerLink="/services" class="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition-all">
+                Our Services
+              </a>
+                </div>
+            </div>
+            <div class="relative" #heroImage>
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-indigo-200 rounded-full blur-3xl opacity-50"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-50"></div>
+                <img src="https://picsum.photos/seed/marketing/800/600" alt="Marketing Dashboard" class="rounded-3xl shadow-2xl relative z-10 border-8 border-white" referrerpolicy="no-referrer">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-12 bg-white border-y border-slate-100 px-8">
+    <div class="container-custom">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            @for (stat of stats; track stat.label) {
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2">{{ stat.value }}</div>
+                <div class="text-sm text-slate-500 font-medium uppercase tracking-wide">{{ stat.label }}</div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Brief Services -->
+<section class="section-padding bg-white px-8">
+    <div class="container-custom">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Solutions</h2>
+            <p class="text-slate-600">We provide cutting-edge tools to help your business reach the top.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @for (service of briefServices; track service.title) {
+            <div class="p-8 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-50 transition-all group">
+                <div class="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center text-indigo-600 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <mat-icon>{{ service.icon }}</mat-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">{{ service.title }}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">{{ service.desc }}</p>
+                <a routerLink="/services" class="text-indigo-600 font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                Learn More <mat-icon class="scale-75">chevron_right</mat-icon>
+              </a>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Industry Section -->
+<section class="section-padding bg-slate-50 px-8">
+    <div class="container-custom">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Industry Presence</h2>
+                <p class="text-slate-600">Our solutions are trusted across diverse sectors nationwide.</p>
+            </div>
+            <a routerLink="/industries" class="text-indigo-600 font-bold flex items-center gap-2">
+            View All Industries <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            @for (industry of industries; track industry) {
+            <div class="bg-white p-6 rounded-xl border border-slate-100 text-center font-medium text-slate-700 hover:text-indigo-600 hover:shadow-md transition-all">
+                {{ industry }}
+            </div>
+            }
+        </div>
+    </div>
+</section>

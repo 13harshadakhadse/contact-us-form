@@ -1,0 +1,42 @@
+<!-- Header -->
+>
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo/logo_1.jpg" alt="Apprevio Technology Logo" class="h-10 object-contain">
+                    <!-- <h1 class="text-2xl font-bold text-gray-800">Apprevio Technology</h1> -->
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                @for (item of navItems; track item.path) {
+                <a [routerLink]="item.path" routerLinkActive="text-indigo-600" [routerLinkActiveOptions]="{exact: true}" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                {{ item.label }}
+              </a> }
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button (click)="isMenuOpen.set(!isMenuOpen())" class="text-slate-600 p-2">
+              <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+            </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    @if (isMenuOpen()) {
+    <div class="md:hidden bg-white border-b border-slate-100 animate-in slide-in-from-top duration-200">
+        <div class="px-4 pt-2 pb-6 space-y-1">
+            @for (item of navItems; track item.path) {
+            <a [routerLink]="item.path" (click)="isMenuOpen.set(false)" class="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">
+                {{ item.label }}
+              </a> }
+        </div>
+    </div>
+    }
+</header>
