@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+<header class=" bg-white backdrop-blur-md border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <!-- Logo -->
@@ -11,18 +11,52 @@
             </div>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8">
+            <!-- <nav class="hidden md:flex space-x-8">
                 @for (item of navItems; track item.path) {
-                <a [routerLink]="item.path" routerLinkActive="text-indigo-600" [routerLinkActiveOptions]="{exact: true}" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                <a [routerLink]="item.path" routerLinkActive="primary-blue" [routerLinkActiveOptions]="{exact: true}" class="text-sm font-medium text-slate-600 hover:primary-blue transition-colors">
                 {{ item.label }}
               </a> }
+            </nav> -->
+            <nav class="hidden md:flex items-center space-x-8">
+                @for (item of navItems; track item.label) {
+
+                <!-- Normal Links -->
+                @if (!item.children) {
+                <a [routerLink]="item.path" routerLinkActive="primary-blue" class="text-sm font-medium text-slate-600 hover:primary-blue transition-colors">
+                    {{ item.label }}
+                </a> }
+
+                <!-- Dropdown -->
+                @if (item.children) {
+                <div class="relative group">
+
+                    <button class=" font-medium text-slate-600 hover:primary-blue flex items-center gap-1">
+                       <span class="text-sm">{{ item.label }}</span>
+                        <mat-icon class=" primary-blue">expand_more</mat-icon>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 mt-3 w-56 bg-white shadow-xl rounded-xl 
+                    opacity-0 invisible group-hover:opacity-100 
+                    group-hover:visible transition-all duration-200">
+
+                        @for (child of item.children; track child.path) {
+                        <a [routerLink]="child.path.split('#')[0]" [fragment]="child.path.split('#')[1]" class="gap-2 flex items-center  px-4 py-3 text-sm text-slate-600 
+                     hover:bg-slate-50 rounded-lg ">
+                            <mat-icon class="pr-1 primary-blue">{{ child.icon }}</mat-icon>
+                            {{ child.label }}
+                        </a> }
+
+                    </div>
+                </div>
+                } }
             </nav>
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button (click)="isMenuOpen.set(!isMenuOpen())" class="text-slate-600 p-2">
-              <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
-            </button>
+                    <mat-icon>{{ isMenuOpen() ? 'close' : 'menu' }}</mat-icon>
+                </button>
             </div>
         </div>
     </div>
@@ -31,10 +65,28 @@
     @if (isMenuOpen()) {
     <div class="md:hidden bg-white border-b border-slate-100 animate-in slide-in-from-top duration-200">
         <div class="px-4 pt-2 pb-6 space-y-1">
-            @for (item of navItems; track item.path) {
+            <!-- @for (item of navItems; track item.path) {
             <a [routerLink]="item.path" (click)="isMenuOpen.set(false)" class="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">
                 {{ item.label }}
-              </a> }
+              </a> } -->
+            @for (item of navItems; track item.label) { @if (!item.children) {
+            <a [routerLink]="item.path" (click)="isMenuOpen.set(false)" class="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-slate-50 rounded-md">
+                {{ item.label }}
+            </a> } @if (item.children) {
+            <div class="px-3 py-4">
+
+                <p class="text-base font-semibold text-slate-800 mb-2">
+                    {{ item.label }}
+                </p>
+
+                @for (child of item.children; track child.path) {
+                <a [routerLink]="child.path.split('#')[0]" [fragment]="child.path.split('#')[1]" (click)="isMenuOpen.set(false)" class="gap-2 flex items-center  pl-4 py-2 text-sm text-slate-600 hover:bg-slate-50 rounded-md">
+                    <mat-icon class="pr-1 primary-blue">{{ child.icon }}</mat-icon>
+                    {{ child.label }}
+                </a> }
+
+            </div>
+            } }
         </div>
     </div>
     }

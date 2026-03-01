@@ -9,12 +9,27 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
- isMenuOpen = signal(false);
+  isMenuOpen = signal(false);
+  // navItems = [
+  //   { label: 'Home', path: '/' },
+  //   { label: 'About', path: '/about' },
+  //   { label: 'Services', path: '/services' },
+  //   { label: 'Contact Us', path: '/contactUs' }
+  // ];
   navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'Industries', path: '/industries' },
+    {
+      label: 'Services',
+      children: [
+        { label: 'Bulk SMS', icon: 'sms', path: '/sms' },
+        { label: 'Voice Message', icon: 'record_voice_over', path: '/voice' },
+        { label: 'WhatsApp API', icon: 'message', path: '/whatsapp' },
+        { label: 'Election Campaign', icon: 'campaign', path: '/election' },
+        { label: 'Email Marketing', icon: 'email', path: '/email' },
+        { label: 'Web Design', icon: 'code', path: '/web' }
+      ]
+    },
     { label: 'Contact Us', path: '/contactUs' }
   ];
 }

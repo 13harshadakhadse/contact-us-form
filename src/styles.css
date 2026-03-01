@@ -1,4 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ 
 /* Custom styles can be added below */
+
+:root {
+  --primary-blue: #3584BC;
+  --light-blue: #74B3D7;
+  --dark-blue: #2E6FA1;
+  --white: #FFFFFF;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url('assets/banner/bgBanner.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: keeps image fixed on scroll */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+}
+.img-service-w{
+    width: 70%;
+    display: flex;
+    justify-self: end;
+}
+.primary-blue{
+    color: var(--primary-blue);
+}
+.primary-blue-bg{
+    background-color: var(--primary-blue);
+}
+
+.light-blue{
+    color: var(--light-blue);
+}
+.light-blue-bg{
+    background-color: var(--light-blue);
+}
+.h-primary-blue-bg:hover{
+    background-color: var(--primary-blue);
+}
