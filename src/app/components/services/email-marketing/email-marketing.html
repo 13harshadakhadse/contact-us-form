@@ -1,55 +1,80 @@
 @for (service of services; track service.title; let i = $index) {
-<section class="min-h-screen section-padding p-8" [class.bg-slate-50]="i % 2 !== 0" [class.bg-white]="i % 2 === 0">
-    <div class="container-custom">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" [class.lg:flex-row-reverse]="i % 2 !== 0">
-            <div>
-                <div class="flex gap-4 items-center">
-                    <div class="w-16 h-16 bg-sky-100 primary-blue rounded-2xl flex items-center justify-center mb-8">
-                        <mat-icon class="scale-125">{{ service.icon }}</mat-icon>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{{ service.title }}</h2>
-                </div>
-                <p class="text-slate-600 mb-8 leading-relaxed text-lg">{{ service.description }}</p>
+<section class="hero">
+    <div class="hero-curves">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+            <path d="M-100,350 Q500,80 1000,400 T1600,250" fill="none" stroke="rgba(255,255,255,0.1)"
+                stroke-width="1.5" />
+            <path d="M-100,550 Q600,200 1100,520 T1700,380" fill="none" stroke="rgba(255,255,255,0.06)"
+                stroke-width="1.5" />
+            <path d="M300,-50 Q600,300 500,650 T750,950" fill="none" stroke="rgba(255,255,255,0.05)"
+                stroke-width="1.5" />
+        </svg>
+    </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-                    @for (feature of service.features; track feature.title) {
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mt-1">
-                            <mat-icon class="scale-50">check</mat-icon>
-                        </div>
+    <div class="hero-card">
+        <div class="flex gap-4 items-center">
+            <div class="w-16 h-16 bg-sky-100 primary-blue rounded-2xl flex items-center justify-center mb-8">
+                <mat-icon class="scale-125">{{ service.icon }}</mat-icon>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{{ service.title }}</h2>
+        </div>
+
+
+        <p class="hero-sub">"{{ service.description }}"</p>
+
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-img-frame">
+
+            <img class="w-full" src="assets/banner/Captureemail.png" [alt]="service.title">
+            <div class="float-badge fb-green">
+                <span class="fb-icon">✅</span> 99.9% Uptime
+            </div>
+            <div class="float-badge fb-gold">
+                <span class="fb-icon">⚡</span> &lt;2s Delivery
+            </div>
+            <div class="float-badge fb-blue">
+                <span class="fb-icon">📊</span> 92% Open Rate
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="section-padding p-8 bg-white">
+    <div class="container-custom">
+        <div class="items-center">
+            <div>
+                <h3 class="text-3xl text-center font-bold text-slate-900 mb-6">Features Overview</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    @for (item of service.featureOverview; track item.title) {
+                    <div class="fc reveal primary-blue-bg">
+                        <div class="fc-num">{{ item.num }}</div>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm mb-1">{{ feature.title }}</h4>
-                            <p class="text-slate-500 text-xs leading-relaxed">{{ feature.desc }}</p>
+                            <div class="fc-title">{{ item.title }}</div>
+                            <p class="fc-desc">{{ item.desc }}</p>
+
+                            <a routerLink="/contactUs" class="inline-flex items-center gap-2 px-4 mt-4 py-2 
+                             text-white rounded-xl text-sm font-semibold border border-white transition-all">
+                                Get Started Now <mat-icon>arrow_forward</mat-icon>
+                            </a>
                         </div>
                     </div>
                     }
                 </div>
-                @if (service.callToAction) {
-                <div class="mt-6 text-left bg-slate-50 p-6 rounded-3xl shadow-lg">
-
-                    <h3 class="text-2xl md:text-2xl font-bold text-slate-900 mb-4">
-                        {{ service.callToAction.heading }}
-                    </h3>
-
-                    <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
-                        {{ service.callToAction.description }}
-                    </p>
-
-                    <a routerLink="/contactUs" class="inline-flex items-center gap-2 px-8 py-3 primary-blue-bg text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all">
-                        {{ service.callToAction.buttonText }}
-                        <mat-icon>arrow_forward</mat-icon>
-                    </a>
-
-                </div>
-                }
-                <!-- <a routerLink="/contactUs" class="inline-flex items-center gap-2 px-6 py-3 primary-blue-bg text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all">
-                Get Started <mat-icon>arrow_forward</mat-icon>
-              </a> -->
-            </div>
-            <div class="w-full">
-                <img [src]="service.image" [alt]="service.title" class="w-10/12 aspect-video lg:aspect-square" referrerpolicy="no-referrer">
             </div>
         </div>
     </div>
 </section>
+
+<section class="cta-section" id="cta">
+    <div class="cta-inner reveal">
+        <h2 class="cta-title">Take Your Campaign to the Next Level </h2>
+        <p class="cta-desc">Partner with Apprevio Technology for a free consultation and a custom campaign plan designed for decisive victory.</p>
+        <div class="cta-btns">
+            <button routerLink="/contactUs" class="btn-white">🚀 Start Free — No Card Needed</button>
+        </div>
+    </div>
+</section>
+
 }

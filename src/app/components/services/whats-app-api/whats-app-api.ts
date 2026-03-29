@@ -16,28 +16,33 @@ export class WhatsAppApi {
       description: `Enhance customer interaction and streamline your business communications with the WhatsApp Business API. 
 Reach your customers on the world’s most popular messaging platform. Automate, organize, and instantly respond to inquiries to deliver a seamless and professional customer experience.`,
       image: 'assets/banner/wpAppIntigration2.png',
-      features: [
+      featureOverview: [
         // { title: 'Automated Workflows', desc: 'Set up automated responses for routine inquiries.' },
         // { title: 'Global Reach', desc: 'Connect with over 2 billion users worldwide.' },
         // { title: 'Secure Messaging', desc: 'Benefit from robust end-to-end encryption.' },
         // { title: 'Rich Media Support', desc: 'Send images, videos, and documents easily.' },
          {
+          num:'01',
           title: 'Instant Communication',
           desc: 'Engage with customers in real-time to improve response times and boost customer satisfaction.'
         },
         {
+          num:'02',
           title: 'Automated Workflows',
           desc: 'Set up automated replies, notifications, and transactional messages to handle routine inquiries effortlessly.'
         },
         {
+          num:'03',
           title: 'Global Reach',
           desc: 'Connect with over 2 billion users worldwide and expand your business presence globally.'
         },
         {
+          num:'04',
           title: 'Secure Messaging',
           desc: 'Leverage robust end-to-end encryption for safe, secure, and private customer conversations.'
         },
         {
+          num:'05',
           title: 'Rich Media Support',
           desc: 'Send images, videos, PDFs, and documents to create dynamic and engaging customer interactions.'
         }

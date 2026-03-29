@@ -16,20 +16,24 @@ services = [
       icon: 'email',
       description: 'Connect, engage, and grow with our all-in-one email marketing solution. Reach your audience with personalized campaigns, automated workflows, and detailed analytics. Craft stunning emails, segment contacts, and track success in real-time.',
       image: 'assets/banner/emailMarketing.png',
-      features: [
+      featureOverview: [
         {
+          num:'01',
           title: 'Easy to Use',
           desc: 'Drag-and-drop editor for effortless email creation.'
         },
         {
+          num:'02',
           title: 'Advanced Segmentation',
           desc: 'Target specific customer groups for maximum campaign impact.'
         },
         {
+          num:'03',
           title: 'Automated Campaigns',
           desc: 'Save time with pre-scheduled emails and smart automation triggers.'
         },
         {
+          num:'04',
           title: 'Detailed Insights',
           desc: 'Monitor open rates, clicks, and conversions with real-time analytics.'
         }

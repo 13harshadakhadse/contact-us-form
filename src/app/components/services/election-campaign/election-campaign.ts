@@ -16,28 +16,34 @@ services = [
       icon: 'campaign',
        description: 'Drive your campaign to victory with expert election campaign management. We provide comprehensive solutions tailored for candidates and political parties — from strategy and voter outreach to digital promotion and fundraising support.',
       image: 'assets/banner/electionCamp.png',
-      features: [ 
+      featureOverview: [ 
           {
+          num:'01',
           title: 'Campaign Strategy Development',
           desc: 'Craft a winning campaign strategy that aligns with your goals and resonates with your target audience.'
         },
         {
+           num:'02',
           title: 'Media & Communication',
           desc: 'Utilize traditional and digital media to effectively communicate your message to a broad audience.'
         },
         {
+           num:'03',
           title: 'Voter Engagement',
           desc: 'Leverage data-driven insights to identify and engage voters through personalized outreach.'
         },
         {
+           num:'04',
           title: 'Event Management',
           desc: 'Organize impactful rallies, town halls, and community events that build momentum.'
         },
         {
+           num:'05',
           title: 'Fundraising Support',
           desc: 'Develop and execute effective fundraising strategies to ensure campaign success.'
         },
         {
+           num:'06',
           title: 'Digital Marketing & Social Media',
           desc: 'Expand your reach and engage voters with compelling digital content.'
         }
